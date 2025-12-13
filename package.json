@@ -1,0 +1,26 @@
+{
+  "name": "meduza-backend",
+  "version": "1.0.0",
+  "description": "Meduza E-commerce Backend",
+  "main": "index.js",
+  "scripts": {
+    "build": "medusa build",
+    "start": "medusa start",
+    "dev": "medusa develop",
+    "seed": "medusa seed"
+  },
+  "keywords": [
+    "medusa",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@medusajs/medusa": "^2.11.3",
+    "@medusajs/framework": "^2.11.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module"
+}
