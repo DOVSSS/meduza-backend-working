@@ -1,24 +1,18 @@
 export default {
   projectConfig: {
-    // ⚠️ ПОРТ ДЛЯ RENDER
     port: parseInt(process.env.PORT || 9000, 10),
     
-    // ⚠️ SQLITE ДЛЯ ПРОСТОТЫ
-    database_url: "sqlite:///medusa.db",
-    database_type: "sqlite",
+    // Для PostgreSQL на Render
+    database_type: "postgres",
+    database_url: process.env.DATABASE_URL || "postgresql://localhost/medusa",
     
-    // ⚠️ ВАЖНО: НОВАЯ СТРУКТУРА ДЛЯ MEDUSA 2.x
     http: {
       jwtSecret: process.env.JWT_SECRET,
       cookieSecret: process.env.COOKIE_SECRET,
-      storeCors: process.env.STORE_CORS || "*",
-      adminCors: process.env.ADMIN_CORS || "*",
     },
     
-    // ⚠️ CORS НАСТРОЙКИ (дополнительно)
-    store_cors: "*",
-    admin_cors: "*",
-    auth_cors: "*",
+    store_cors: process.env.STORE_CORS || "*",
+    admin_cors: process.env.ADMIN_CORS || "*",
   },
   
   plugins: [],
